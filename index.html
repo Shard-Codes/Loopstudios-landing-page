@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Loopstudios landing page</title>
+
+  <!--====================== Css file link ======================-->
+  <link rel="stylesheet" href="Css/style.css">
+
+  <!--====================== Box-icons cdn link ======================-->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!--====================== Header ======================-->
+  <header class="header">
+    <nav class="navigation container">
+      <a href="index.html" class="nav__logo">
+        <img src="images/logo.svg" alt="Loopstudios logo" class="nav__logo-image">
+      </a>
+
+      <div class="nav__menu" id="primary__navigation">
+        <ul class="nav__list" aria-label="Primary" role="list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              About
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              Careers
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              Events
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              Products
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              Support
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <button class="nav__toggle" id="nav__toggle" aria-controls="primary__navigation" aria-expanded="false">
+        <img src="images/icon-hamburger.svg" alt="" class="nav__menu-icon" aria-hidden="true">
+        <img src="images/icon-close.svg" alt="" class="nav__close-icon" aria-hidden="true">
+        <span class="visually__hidden">Menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <!--====================== Main ======================-->
+  <main class="main">
+    <!--====================== Hero section ======================-->
+    <section class="hero section">
+      <div class="hero__container container grid">
+        <div class="hero__text-box">
+          <h1 class="hero__title">
+            Immersive experiences <span>that</span> deliver
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!--====================== About section ======================-->
+    <section class="about section">
+      <div class="about__container container grid">
+        <picture>
+          <source media="(min-width: 48em)" srcset="images/desktop/image-interactive.jpg">
+          <img src="images/mobile/image-interactive.jpg" alt="A man with a virtual reality headset" class="about__img">
+        </picture>
+
+        <div class="about__data">
+          <h2 class="about__title">
+            The leader in <span>interactive VR</span>
+          </h2>
+
+          <p class="about__description">
+            Founded in 2011, Loopstudios has been producing world-class virtual reality
+            projects for some of the best companies around the globe. Our award-winning
+            creations have transformed businesses through digital experiences that bind
+            to their brand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--====================== Creations section ======================-->
+    <section class="creation section">
+      <div class="creation__container container grid">
+        <h2 class="section__title">
+          Our creations
+        </h2>
+
+        <div class="creation__grid grid">
+          <div class="creation__box">
+            <h2 class="creation__title">
+              <span>Deep</span> earth
+            </h2>
+          </div>
+
+          <div class="creation__box">
+            <h2 class="creation__title">
+              <span>Night</span> arcade
+            </h2>
+          </div>
+
+          <div class="creation__box">
+            <h2 class="creation__title">
+              <span>Soccer</span> team VR
+            </h2>
+          </div>
+
+          <div class="creation__box">
+            <h2 class="creation__title">
+              <span>The</span> grid
+            </h2>
+          </div>
+
+          <div class="creation__box">
+            <h2 class="creation__title">
+              <span>From</span> up above VR
+            </h2>
+          </div>
+
+          <div class="creation__box">
+            <h2 class="creation__title">
+              <span>Pocket</span> borealis
+            </h2>
+          </div>
+
+          <div class="creation__box">
+            <h2 class="creation__title">
+              <span>The</span> curiosity
+            </h2>
+          </div>
+
+          <div class="creation__box">
+            <h2 class="creation__title">
+              <span>Make</span> it fisheye
+            </h2>
+          </div>
+
+        </div>
+        <button class="button">See all</button>
+      </div>
+    </section>
+  </main>
+
+  <!--====================== Footer ======================-->
+  <footer class="footer">
+    <div class="footer__container container grid">
+      <a href="index.html" class="footer__logo">
+        <img src="images/logo.svg" alt="Loopstudios logo" class="footer__logo-image">
+      </a>
+
+      <ul class="footer__list" role="list" aria-label="Secondary">
+        <li class="footer__item">
+          <a href="#" class="footer__link">
+            About
+          </a>
+        </li>
+
+        <li class="footer__item">
+          <a href="#" class="footer__link">
+            Careers
+          </a>
+        </li>
+
+        <li class="footer__item">
+          <a href="#" class="footer__link">
+            Events
+          </a>
+        </li>
+
+        <li class="footer__item">
+          <a href="#" class="footer__link">
+            Products
+          </a>
+        </li>
+
+        <li class="footer__item">
+          <a href="#" class="footer__link">
+            Support
+          </a>
+        </li>
+      </ul>
+
+      <div class="social__links">
+        <ul class="social__links-list" aria-label="tertiary" role="list">
+          <li class="footer__item">
+            <a href="#" class="footer__link" aria-label="Facebook link">
+              <i class='bx bxl-facebook-square social__link-icon'></i>
+              <span class="visually__hidden">Facebook</span>
+            </a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#" class="footer__link" aria-label="Twitter link">
+              <i class='bx bxl-twitter social__link-icon'></i>
+              <span class="visually__hidden">Twitter</span>
+            </a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#" class="footer__link" aria-label="Pinterest link">
+              <i class='bx bxl-pinterest social__link-icon'></i>
+              <span class="visually__hidden">Pinterest</span>
+            </a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#" class="footer__link" aria-label="Instagram link">
+              <i class='bx bxl-instagram social__link-icon'></i>
+              <span class="visually__hidden">Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <span class="copy__right">
+        © 2021 Loopstudios. All rights reserved.
+      </span>
+    </div>
+  </footer>
+
+  <!--====================== Js file link ======================-->
+  <script src="Js/main.js"></script>
+
+</body>
+</html>

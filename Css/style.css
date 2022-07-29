@@ -1,0 +1,645 @@
+/*=========================== Google fonts link - Alata ===========================*/
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+/*=========================== Google fonts link - Josefin Sans ===========================*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+/*=========================== Html reset ===========================*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*=========================== Css variables ===========================*/
+:root {
+  --header-height: 5rem;
+
+  /*=========== Colors ===========*/
+  /* Primary */
+  --clr-primary-900: hsl(0, 0%, 0%);
+  --clr-primary-500: hsl(0, 0%, 41%);
+  --clr-primary-300: hsl(0, 0%, 55%);
+  --clr-primary-100: hsl(0, 0%, 100%);
+
+  /*=========== Typography ===========*/
+  /* Fonts */
+  --ff-primary: 'Alata', sans-serif;
+  --ff-secondary: 'Josefin Sans', sans-serif;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-light: 300;
+
+  /* Font size */
+  --fs-500: 2.5rem;
+  --fs-400: 2rem;
+  --fs-300: 1.25rem;
+  --fs-200: 1rem;
+  --fs-100: .938rem;
+}
+
+/* Responsive typography */
+/* 768px wide */
+@media (min-width: 48em) {
+  :root {
+    /* Font size */
+    --fs-500: 4rem;
+    --fs-400: 2.5rem;
+    --fs-300: 1.75rem;
+  }
+}
+
+/*=========================== Base styles ===========================*/
+body {
+  color: var(--clr-primary-900);
+  background-color: var(--clr-primary-100);
+  font-family: var(--ff-primary);
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=========================== Reusable classes ===========================*/
+.container {
+  max-width: 1128px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 6rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-light);
+  color: var(--clr-primary-900);
+  font-family: var(--ff-secondary);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.button {
+  text-transform: uppercase;
+  color: var(--clr-primary-900);
+  border: 2px solid var(--clr-primary-300);
+  transition: all 0.3s;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-200);
+  letter-spacing: 3px;
+  background: transparent;
+  padding: .5rem 2rem;
+  cursor: pointer;
+  width: fit-content;
+  justify-self: center;
+}
+
+.button:hover {
+  background: var(--clr-primary-900);
+  color: var(--clr-primary-100);
+  border: 2px solid var(--clr-primary-900);
+}
+
+/*=========================== Header ===========================*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+/* Sticky header class */
+.header.sticky__header {
+  background: var(--clr-primary-900);
+}
+
+/*=========================== Navigation ===========================*/
+.navigation {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.nav__logo-image {
+  width: 8rem;
+}
+
+/* 800px wide */
+@media (max-width: 50em) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background: var(--clr-primary-900);
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    padding: 0 1.25rem;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .nav__link {
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-weight: var(--fw-light);
+    color: var(--clr-primary-100);
+    letter-spacing: 3px;
+    font-family: var(--ff-secondary);
+  }
+}
+
+.nav__close-icon {
+  display: none;
+}
+
+.nav__menu-icon {
+  display: block;
+}
+
+.nav__toggle {
+  all: unset;
+}
+
+/* Visually hidden class */
+.visually__hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Open menu class */
+.nav__menu.open__menu {
+  left: 0;
+  opacity: 1;
+}
+
+.open__menu~.nav__toggle .nav__menu-icon {
+  display: none;
+}
+
+.open__menu~.nav__toggle .nav__close-icon {
+  display: block;
+}
+
+/*=========================== Hero section ===========================*/
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/mobile/image-hero.jpg);
+  background-position: center 60%;
+  background-size: cover;
+  width: 100%;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__text-box {
+  border: 2px solid var(--clr-primary-100);
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.hero__title {
+  font-size: var(--fs-500);
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-light);
+  color: var(--clr-primary-100);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero__title span {
+  display: block;
+}
+
+/*=========================== About section ===========================*/
+.about__container {
+  justify-items: center;
+}
+
+.about__data {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.about__title {
+  font-size: var(--fs-400);
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.about__title span {
+  display: block;
+}
+
+.about__description {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+  color: var(--clr-primary-300);
+  line-height: 1.6;
+  padding: 0 1.25rem;
+}
+
+/*=========================== Creation section ===========================*/
+.creation__box {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 120px;
+  padding: 1.5rem 1.5rem .75rem;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.creation__box:nth-child(1) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/mobile/image-deep-earth.jpg);
+}
+
+.creation__box:nth-child(2) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/mobile/image-night-arcade.jpg);
+}
+
+.creation__box:nth-child(3) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/mobile/image-soccer-team.jpg);
+}
+
+.creation__box:nth-child(4) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/mobile/image-grid.jpg);
+}
+
+.creation__box:nth-child(5) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/mobile/image-from-above.jpg);
+}
+
+.creation__box:nth-child(6) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/mobile/image-pocket-borealis.jpg);
+}
+
+.creation__box:nth-child(7) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/mobile/image-curiosity.jpg);
+}
+
+.creation__box:nth-child(8) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/mobile/image-fisheye.jpg);
+}
+
+.creation__title {
+  font-size: var(--fs-300);
+  font-family: var(--ff-secondary);
+  text-transform: uppercase;
+  font-weight: var(--fw-light);
+  color: var(--clr-primary-100);
+  transition: all 0.3s;
+}
+
+.creation__title span {
+  display: block;
+}
+
+.creation__grid .button {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+/*=========================== Footer ===========================*/
+.footer {
+  background-color: var(--clr-primary-900);
+  padding: 2rem;
+}
+
+.footer__container {
+  justify-items: center;
+}
+
+.footer__logo-image {
+  width: 8rem;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.footer__link {
+  font-size: var(--fs-100);
+  font-weight: var(--fw-regular);
+  color: var(--clr-primary-100);
+}
+
+.copy__right {
+  color: var(--clr-primary-100);
+  text-align: center;
+  font-size: var(--fs-100);
+  color: var(--clr-primary-500);
+  font-weight: var(--fw-regular);
+}
+
+.social__links {
+  margin-top: 1.5rem;
+}
+
+.social__links-list {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.social__link-icon {
+  font-size: var(--fs-300);
+}
+
+/*=========================== Hover states ===========================*/
+.footer__item::after,
+.nav__item::after {
+  width: 0;
+  display: block;
+  margin: 5px auto;
+  height: 2px;
+  background-color: var(--clr-primary-100);
+  content: '';
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.footer__item:hover::after,
+.nav__item:hover::after {
+  width: 50%;
+}
+
+.creation__box::after {
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  content: '';
+  position: absolute;
+  z-index: 1;
+  background-color: var(--clr-primary-100);
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.creation__box:hover::after {
+  opacity: .7;
+}
+
+.creation__box:hover .creation__title {
+  color: var(--clr-primary-900);
+}
+
+/*=========================== Media queries ===========================*/
+/* 608px wide */
+@media (min-width: 38em) {
+
+  /*=========================== Hero section ===========================*/
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/desktop/image-hero.jpg);
+  }
+
+  .hero__text-box {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .hero__title span {
+    display: initial;
+  }
+}
+
+/* 800px wide */
+@media (min-width: 50em) {
+
+  /*=========================== Navigation ===========================*/
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+  }
+
+  .nav__link {
+    font-size: 1rem;
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-100);
+    font-family: var(--ff-primary);
+  }
+
+  /*=========================== About section ===========================*/
+  .about__container {
+    align-items: flex-end;
+  }
+
+  /*=========================== Creation section ===========================*/
+  .creation__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .creation__box {
+    height: 450px;
+  }
+
+  .creation__box:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/desktop/image-deep-earth.jpg);
+  }
+
+  .creation__box:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/desktop/image-night-arcade.jpg);
+  }
+
+  .creation__box:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/desktop/image-soccer-team.jpg);
+  }
+
+  .creation__box:nth-child(4) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/desktop/image-grid.jpg);
+  }
+
+  .creation__box:nth-child(5) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/desktop/image-from-above.jpg);
+  }
+
+  .creation__box:nth-child(6) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/desktop/image-pocket-borealis.jpg);
+  }
+
+  .creation__box:nth-child(7) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/desktop/image-curiosity.jpg);
+  }
+
+  /*=========================== Footer ===========================*/
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+  }
+
+  .footer__list {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .social__links {
+    margin: 0;
+  }
+}
+
+/* 1120px wide */
+@media (min-width: 70em) {
+
+  /*=========================== About section ===========================*/
+  .about__container {
+    position: relative;
+    justify-items: initial;
+  }
+
+  .about__data {
+    background-color: var(--clr-primary-100);
+    left: 50%;
+    bottom: -5%;
+    padding: 4rem 4rem 2rem;
+    position: absolute;
+    text-align: left;
+  }
+
+  .about__title {
+    font-size: var(--fs-400);
+  }
+
+  /*=========================== Creation section ===========================*/
+  .creation__container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .creation__container .button {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  .creation__container .section__title {
+    justify-self: start;
+  }
+
+  .creation__grid {
+    grid-column: 1 / -1;
+  }
+}
