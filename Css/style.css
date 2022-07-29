@@ -250,6 +250,10 @@ html {
   }
 }
 
+.nav__item {
+  position: relative;
+}
+
 .nav__close-icon {
   display: none;
 }
@@ -468,9 +472,13 @@ html {
 .footer__item::after,
 .nav__item::after {
   width: 0;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
-  margin: 5px auto;
-  height: 2px;
+  margin: 0 auto;
+  height: 3px;
   background-color: var(--clr-primary-100);
   content: '';
   cursor: pointer;
