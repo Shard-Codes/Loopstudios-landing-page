@@ -477,7 +477,6 @@ html {
   left: 50%;
   transform: translateX(-50%);
   display: block;
-  margin: 0 auto;
   height: 3px;
   background-color: var(--clr-primary-100);
   content: '';
